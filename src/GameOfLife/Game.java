@@ -76,6 +76,10 @@ public class Game {
         System.out.println();
     }
 
+     /*
+          -in every board we have cells
+          -we will init the board and add them
+         */
 
     public void initBoard() {
         Iterator<Cordinta> cord = this._IniteCordinta.iterator();
@@ -86,6 +90,10 @@ public class Game {
        }
 
     }
+    /*
+        to check number of alive neighbors to
+        every cell in board
+     */
 
     public int _getNumOfliveNeighbors(Cordinta c) {
         int count = 0;
@@ -108,6 +116,11 @@ public class Game {
         return this._Board[hight][width].isAlive() ? count-1 : count;
     }
 
+    /*
+     to decide in every generation who will live or die
+     need to check the changes of boolean state to every cell
+     and save the information by table ( matrix )
+     */
 
     private void CheckForChanges() {
 
@@ -144,6 +157,10 @@ public class Game {
 
         }
     }
+    
+     /*
+    the engine of game that run generations
+     */
     private void RunGen() {
         for (int i = 0; i < this._Height; i++) {
             for (int j = 0; j < this._Width; j++) {
@@ -167,7 +184,9 @@ public class Game {
 
     }
 
-
+    /*
+     the main function that start the game :)
+     */
 
     public  void start()
     {
